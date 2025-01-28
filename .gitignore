@@ -1,0 +1,17 @@
+# Python
+*.pyc
+__pycache__/
+
+# Virtual Environment
+venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Data
+data/raw/
+data/processed/
+data/annotated/
+
+# Models
+models/
