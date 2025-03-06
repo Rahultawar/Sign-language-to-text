@@ -1,6 +1,6 @@
 import cv2 #video capture and image processing
 import mediapipe as mp #For hand tracking
-import os #For file handling and dir. operation
+import os 
 
 def collect_data(output_dir):
     #Initialize mediapipe Hands
@@ -28,10 +28,9 @@ def collect_data(output_dir):
                 for lm in hand_landmarks.landmark: #Extracting landmarks
                     landmarks.append([lm.x, lm.y, lm.z])
                     
-                # Save landmarks to file
-                with open(os.path.join(output_dir, f'frame_{frame_count}.csv'), 'w') as f:
-                    for lm in landmarks:
-                        f.write(','.join(map(str, lm)) + '\n') # Write the landmarks to a CSV file
+                # Save frame as image
+                image_path = os.path.join(output_dir, f'frame_{frame_count}.png')
+                cv2.imwrite(image_path, frame)
                 frame_count += 1
          
         cv2.imshow('Hand Tracking', frame)
