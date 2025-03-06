@@ -9,11 +9,7 @@ venv/
 .ipynb_checkpoints/
 
 # Data
-data/raw/
-data/processed/
-data/annotated/
-data/test/
-data/splits/
+data/
 
 # Models
 models/
